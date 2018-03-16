@@ -1,0 +1,51 @@
+<form class="form-signin" [formGroup]="form">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" name="email" formControlName="email" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" name="password" formControlName="password" class="form-control" placeholder="Password" required>
+  
+  <div formGroupName="contact">
+      <input type="text" name="firstName" formControlName="firstName" placeholder="First Name">
+      <input type="text" name="lastName" formControlName="lastName" placeholder="Last Name">
+  </div>
+  
+  <button class="btn btn-lg btn-primary btn-block" type="button" (click)="signIn()">Sign in</button>
+</form>
+
+
+
+<!-- <form class="form-signin">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" name="email" [(ngModel)]="person.email" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" name="password" [(ngModel)]="person.password" class="form-control" placeholder="Password" required>
+  
+  <div>
+      <input type="text" name="firstName" [(ngModel)]="person.contact.firstName">
+      <input type="text" name="lastName" [(ngModel)]="person.contact.lastName">
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" type="button" (click)="signIn()">Sign in</button>
+</form> -->
+
+
+
+<!-- <form class="form-signin" ngForm #f="ngForm">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" name="email" ngModel #email="ngModel" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" name="password" ngModel #password="ngModel" class="form-control" placeholder="Password" required>
+
+  <div ngModelGroup="contact" #contact="ngModelGroup">
+    <input type="text" name="firstName" ngModel #firstName="ngModel">
+    <input type="text" name="lastName" ngModel #lastName="ngModel">
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" type="button" (click)="signIn(f.value)">Sign in</button>
+</form> -->

@@ -1,0 +1,10 @@
+
+<h1>Home Page</h1>
+<p *ngIf="authService.isLoggedIn()">
+  Welcome {{ authService.currentUser.name }} //  {{authService.currentUserForAdmin.name}}
+</p>
+<ul>
+  <li *ngIf="authService.isLoggedIn() && authService.currentUserForAdmin.admin"><a routerLink="/admin">Admin</a></li>
+  <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login">Login</a></li>
+  <li *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()">Logout</a></li>
+</ul>
